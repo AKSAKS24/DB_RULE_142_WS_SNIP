@@ -1,0 +1,9 @@
+{
+    "pgm_name": "ZTEST_RULE142_COMBINED",
+    "inc_name": "ZTEST_RULE142_COMB_INC",
+    "type": "PROG",
+    "name": "MAIN_BLOCK",
+    "start_line": 5,
+    "end_line": 200,
+    "code": "DATA lt_data TYPE TABLE OF string.\nDATA lv_file TYPE string.\nCALL FUNCTION 'WS_UPLOAD'\n  EXPORTING\n    filename = lv_file\n  TABLES\n    data_tab = lt_data.\nCALL FUNCTION 'WS_DOWNLOAD'\n  EXPORTING\n    filename = lv_file\n  TABLES\n    data_tab = lt_data.\nCALL FUNCTION 'UPLOAD'.\nCALL FUNCTION 'DOWNLOAD'.\nCALL FUNCTION 'GUI_UPLOAD'\n  EXPORTING\n    filename = lv_file\n  TABLES\n    data_tab = lt_data.\nCALL FUNCTION 'GUI_DOWNLOAD'\n  EXPORTING\n    filename = lv_file\n  TABLES\n    data_tab = lt_data.\nCALL FUNCTION 'SCMS_BINARY_TO_XSTRING'.\n"
+}
